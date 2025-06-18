@@ -57,7 +57,7 @@ export interface User {
 }
 
 // API response types
-export interface ApiResponse<T = any> {
+export interface ApiResponse<T = unknown> {
   success: boolean
   data?: T
   error?: string
@@ -93,12 +93,12 @@ export interface AnalyticsEvent {
 export interface AppError {
   code: string
   message: string
-  details?: any
+  details?: Record<string, unknown>
 }
 
 // Component state types
-export interface ComponentState {
+export interface ComponentState<T = unknown> {
   loading: boolean
   error: AppError | null
-  data: any
+  data: T
 } 

@@ -58,7 +58,7 @@ export function safeJsonParse<T>(str: string, fallback: T): T {
 /**
  * Debounce utility for performance optimization
  */
-export function debounce<T extends (...args: any[]) => any>(
+export function debounce<T extends (...args: unknown[]) => unknown>(
   func: T,
   wait: number
 ): (...args: Parameters<T>) => void {

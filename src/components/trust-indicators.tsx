@@ -29,7 +29,7 @@ export function TrustIndicators() {
           {/* Logos on right */}
           <div className="md:w-2/3">
             <div className="grid grid-cols-3 md:grid-cols-6 gap-8 items-center justify-items-center opacity-70 hover:opacity-90 transition-opacity duration-300">
-              {apps.map((app, index) => (
+              {apps.map((app) => (
                 <div
                   key={app.name}
                   className={`relative hover:scale-110 transition-transform duration-300 cursor-pointer ${
