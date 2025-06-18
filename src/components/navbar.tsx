@@ -3,71 +3,60 @@
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
+import { DownloadButton } from "./download-button"
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <nav className="relative z-50 w-full px-4 py-4 sm:px-6 lg:px-8 bg-black">
+    <nav className="fixed top-2 left-4 right-4 z-50 w-auto sm:px-3 sm:py-0.5 lg:px-4 bg-black/80 backdrop-blur-md rounded-full">
       <div className="flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center">
-          <Link href="/" className="flex items-center space-x-1">
-            <div className="w-10 h-10 relative">
+          <Link href="/" className="flex items-center -space-x-2.5">
+            <div className="w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 relative">
               <Image
                 src="/knox.PNG"
                 alt="Knox Logo"
                 fill
                 className="object-contain"
-                sizes="40px"
+                sizes="80px"
               />
             </div>
-            <span className="text-white font-normal text-xl font-[var(--font-bebas-neue)] tracking-wide">KNOX</span>
+            <span className="text-white font-normal text-2xl sm:text-3xl md:text-4xl tracking-wide -ml-2 mt-1" style={{ fontFamily: 'var(--font-bebas-neue)' }}>KNOX</span>
           </Link>
         </div>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
           <Link href="/" className="text-white hover:text-blue-200 transition-colors">
-            HOME
+            Home
           </Link>
           <Link href="/features" className="text-white hover:text-blue-200 transition-colors">
-            FEATURES
+            Features
           </Link>
           <Link href="/downloads" className="text-white hover:text-blue-200 transition-colors">
-            DOWNLOADS
+            Downloads
           </Link>
           <Link href="/docs" className="text-white hover:text-blue-200 transition-colors">
-            DOCS
+            Docs
           </Link>
           <Link href="/support" className="text-white hover:text-blue-200 transition-colors">
-            SUPPORT
+            Support
           </Link>
         </div>
 
-        {/* Search Bar */}
+        {/* Sign In and Download Buttons */}
         <div className="hidden lg:flex items-center">
-          <div className="relative">
-            <input
-              type="search"
-              placeholder="SEARCH"
-              className="bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent w-64"
+          <button className="px-9 py-2.5 text-white font-normal hover:text-blue-200 transition-colors font-[var(--font-inter)] border border-gray-300/30 rounded-md hover:border-gray-200/50">
+            Sign In
+          </button>
+          <div className="scale-75">
+            <DownloadButton
+              platform="mac"
+              label="Download"
+              primary={true}
             />
-            <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
-              <svg
-                className="w-4 h-4 text-white/70"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-            </div>
           </div>
         </div>
 
@@ -111,42 +100,47 @@ export function Navbar() {
               className="block text-white hover:text-blue-200 transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
             >
-              HOME
+              Home
             </Link>
             <Link
               href="/features"
               className="block text-white hover:text-blue-200 transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
             >
-              FEATURES
+              Features
             </Link>
             <Link
               href="/downloads"
               className="block text-white hover:text-blue-200 transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
             >
-              DOWNLOADS
+              Downloads
             </Link>
             <Link
               href="/docs"
               className="block text-white hover:text-blue-200 transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
             >
-              DOCS
+              Docs
             </Link>
             <Link
               href="/support"
               className="block text-white hover:text-blue-200 transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
             >
-              SUPPORT
+              Support
             </Link>
-            <div className="pt-4">
-              <input
-                type="search"
-                placeholder="SEARCH"
-                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
-              />
+            <div className="pt-4 space-y-3">
+              <button className="block w-full text-left text-white hover:text-blue-200 transition-colors py-4 font-[var(--font-inter)] border border-gray-300/30 rounded-md hover:border-gray-200/50 px-8">
+                Sign In
+              </button>
+              <div className="scale-90">
+                <DownloadButton
+                  platform="mac"
+                  label="Download"
+                  primary={true}
+                />
+              </div>
             </div>
           </div>
         </div>
