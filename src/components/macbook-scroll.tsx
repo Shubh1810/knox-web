@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
 import { cn } from "@/lib/utils";
 import {
@@ -83,7 +83,6 @@ export const MacbookScroll = ({
       )}
       {/* Lid */}
       <Lid
-        src={src}
         scaleX={scaleX}
         scaleY={scaleY}
         rotate={rotate}
@@ -122,13 +121,11 @@ export const Lid = ({
   scaleY,
   rotate,
   translate,
-  src,
 }: {
   scaleX: MotionValue<number>;
   scaleY: MotionValue<number>;
   rotate: MotionValue<number>;
   translate: MotionValue<number>;
-  src?: string;
 }) => {
   return (
     <div className="relative [perspective:800px]">

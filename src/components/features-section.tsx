@@ -24,7 +24,7 @@ export function FeaturesSection() {
               </div>
               <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white mb-4">Context Aware</h3>
               <p className="text-gray-400 text-base sm:text-lg leading-relaxed max-w-sm mx-auto">
-                Understands what you're working on and suggests relevant tools and actions based on your current context.
+                Understands what you&apos;re working on and suggests relevant tools and actions based on your current context.
               </p>
             </div>
 
@@ -37,7 +37,7 @@ export function FeaturesSection() {
               </div>
               <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white mb-4">Native macOS</h3>
               <p className="text-gray-400 text-base sm:text-lg leading-relaxed max-w-sm mx-auto">
-                Built specifically for macOS with native performance, system integration, and Apple's design principles.
+                Built specifically for macOS with native performance, system integration, and Apple&apos;s design principles.
               </p>
             </div>
 

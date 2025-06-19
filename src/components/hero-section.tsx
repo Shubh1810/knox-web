@@ -3,16 +3,35 @@
 import { DownloadButton } from "./download-button"
 import { useEffect, useRef } from "react"
 
+interface VantaOptions {
+  el: HTMLElement | null;
+  mouseControls: boolean;
+  touchControls: boolean;
+  gyroControls: boolean;
+  minHeight: number;
+  minWidth: number;
+  scale: number;
+  color1: number;
+  color2: number;
+  size: number;
+}
+
+interface VantaEffect {
+  destroy: () => void;
+}
+
 declare global {
   interface Window {
-    VANTA: any;
-    THREE: any;
+    VANTA: {
+      CELLS: (options: VantaOptions) => VantaEffect;
+    };
+    THREE: unknown;
   }
 }
 
 export function HeroSection() {
   const vantaRef = useRef<HTMLDivElement>(null)
-  const vantaInstance = useRef<any>(null)
+  const vantaInstance = useRef<VantaEffect | null>(null)
 
   useEffect(() => {
     const loadVanta = async () => {
