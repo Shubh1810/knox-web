@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Bebas_Neue, Inter, Metal_Mania } from "next/font/google";
+import { Geist, Geist_Mono, Bebas_Neue, Inter, Metal_Mania, Roboto_Condensed } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -27,6 +27,12 @@ const metalMania = Metal_Mania({
   variable: "--font-metal-mania",
   subsets: ["latin"],
   weight: "400",
+});
+
+const robotoCondensed = Roboto_Condensed({
+  variable: "--font-roboto-condensed",
+  subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -109,7 +115,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${bebasNeue.variable} ${inter.variable} ${metalMania.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${bebasNeue.variable} ${inter.variable} ${metalMania.variable} ${robotoCondensed.variable} antialiased`}
       >
         {children}
       </body>

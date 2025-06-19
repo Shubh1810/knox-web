@@ -96,7 +96,7 @@ export function HeroSection() {
       <div className="relative max-w-7xl mx-auto z-10">
         <div className="text-center">
           {/* Main Heading */}
-          <h1 className="text-[2.75rem] sm:text-6xl lg:text-8xl font-bold text-white mb-4 sm:mb-8 leading-none" style={{ fontFamily: 'var(--font-metal-mania)' }}>
+          <h1 className="text-[2.75rem] sm:text-6xl lg:text-8xl font-bold text-white mb-4 sm:mb-8 leading-none" style={{ fontFamily: 'var(--font-roboto-condensed)' }}>
             Your Ultimate MacOS
             <br />
  
