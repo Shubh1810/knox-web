@@ -11,7 +11,7 @@ export default function Home() {
       <HeroSection />
       <div className="relative">
         <div className="-mt-[24rem] sm:-mt-[48rem] z-30 relative">
-          <MacbookScroll src="/knox2.PNG" />
+          <MacbookScroll />
         </div>
       </div>
       <div className="-mt-16 sm:-mt-20 relative z-20">
