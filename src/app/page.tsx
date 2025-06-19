@@ -3,6 +3,7 @@ import { HeroSection } from "@/components/hero-section"
 import { TrustIndicators } from "@/components/trust-indicators"
 import { MacbookScroll } from "@/components/macbook-scroll"
 import { FeaturesSection } from "@/components/features-section"
+import { Footer } from "@/components/footer"
 
 export default function Home() {
   return (
@@ -17,8 +18,10 @@ export default function Home() {
       <div className="-mt-16 sm:-mt-20 relative z-20">
         <TrustIndicators />
       </div>
-      <FeaturesSection />
-      <div className="h-[100vh]"></div>
+      <div className="mt-32 sm:mt-48 lg:mt-80">
+        <FeaturesSection />
+      </div>
+      <Footer />
     </div>
   )
 }
