@@ -4,9 +4,10 @@ interface DownloadButtonProps {
   platform: "mac" | "windows"
   label: string
   primary?: boolean
+  variant?: "default" | "black"
 }
 
-export function DownloadButton({ platform, label, primary = false }: DownloadButtonProps) {
+export function DownloadButton({ platform, label, primary = false, variant = "default" }: DownloadButtonProps) {
   const getPlatformIcon = () => {
     if (platform === "mac") {
       return (
@@ -27,8 +28,14 @@ export function DownloadButton({ platform, label, primary = false }: DownloadBut
   
   const primaryClasses = "bg-white hover:bg-gray-100 text-black shadow-lg"
   const secondaryClasses = "bg-white/10 hover:bg-white/20 text-white border border-white/30"
+  const blackClasses = "bg-black hover:bg-gray-800 text-white border border-white/20 shadow-lg"
 
-  const buttonClasses = `${baseClasses} ${primary ? primaryClasses : secondaryClasses}`
+  const getButtonClasses = () => {
+    if (variant === "black") return `${baseClasses} ${blackClasses}`
+    return `${baseClasses} ${primary ? primaryClasses : secondaryClasses}`
+  }
+
+  const buttonClasses = getButtonClasses()
 
   const handleDownload = () => {
     // In a real app, this would trigger the actual download
